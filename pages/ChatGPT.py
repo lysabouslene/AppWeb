@@ -1,6 +1,6 @@
 import streamlit as st
 st.title("ChatGPT - Rédacteur Web")
-user.input = st.text_input("Choisissez une thématique")
+user_input = st.text_input("Choisissez une thématique")
 openai_key = st.sidebar.text_input("Tapez une clé OpenAI")
 # Rédacteur Correction
 
@@ -58,7 +58,7 @@ chat_completion = client.chat.completions.create(
         },
          {
             "role": "user",
-            "content": user input,
+            "content": user_input,
         },
     ],
     model="gpt-3.5-turbo",
