@@ -1,2 +1,2 @@
 import streamlit as st 
-st.title("Dall-e " 3.py")
+st.title("Dall-e 3")
