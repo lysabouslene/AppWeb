@@ -8,9 +8,13 @@ st.write(user_input)
 st.sidebar.title("Assistant")
 user_notes = st.sidebar.text_input("Veuillez entrer la clé Open IA")
 
-# Si l'utilisateur a entré une clé et un texte, on lance la génération
-if api_key and user_input:
-    # Initialisation de l'API avec la clé entrée
+# Vérifiez si la clé API et la description de l'image sont fournies
+if not api_key:
+    st.sidebar.warning("Veuillez entrer votre clé API OpenAI pour générer une image.")
+elif not user_input:
+    st.warning("Veuillez entrer une description pour générer une image.")
+else:
+    # Si l'utilisateur a entré une clé et un texte, on lance la génération
     openai.api_key = api_key
 
     # Appel à l'API DALL-E pour générer une image
