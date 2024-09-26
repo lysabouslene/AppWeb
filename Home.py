@@ -4,5 +4,5 @@ st.title("Mon formulaire")
 # Texte 
 st.write("Ceci est un formulaire de contact")
 # Champ de saisi 
-st.text_impot("Tapez votre texte : ")
+st.text_input("Tapez votre texte : ")
 
