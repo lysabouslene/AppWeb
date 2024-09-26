@@ -9,4 +9,4 @@ st.write(user_input)
 # Image 
 st.image("https://th.bing.com/th/id/OIP.QU4hu4jfXbTgoFGCWX1VgAHaC3?rs=1&pid=ImgDetMain")
 # sidebare 
-st.sidbar.title("Lysa Bouslene")
+st.sidebar.title("Lysa Bouslene")
