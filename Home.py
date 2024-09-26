@@ -19,4 +19,4 @@ age = st.select_slider("Quel est votre age ?", range(0, 99))
 if age >= 18: 
   st.write("Vous etes majeur")
 else:
-  st.write("Vous n'etes pas majeur")
+  st.write("Vous etes mineur")
