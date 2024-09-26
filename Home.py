@@ -12,3 +12,5 @@ st.video("https://youtu.be/kK3gGPkO9L8")
 st.sidebar.title("Lysa Bouslene")
 #Video 
 st.sidebar.image("https://th.bing.com/th/id/OIP.QU4hu4jfXbTgoFGCWX1VgAHaC3?rs=1&pid=ImgDetMain")
+# Select Bar
+student_grad = st.selectbox("Selectionnez votre niveau d'etude",["Bac","Bac+2","Bac+5"])
