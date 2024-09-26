@@ -22,8 +22,7 @@ image = client.images.generate(
 )
 
 image_url = image.data[0].url
-print(image_url)
-        # Afficher l'image dans l'application Streamlit
+# Afficher l'image dans l'application Streamlit
         st.image(image_url, caption="Image générée", use_column_width=True)
     except Exception as e:
         st.error(f"Erreur lors de la génération de l'image : {e}")
