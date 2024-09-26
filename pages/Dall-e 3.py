@@ -10,20 +10,14 @@ OpenAI_KEY= st.sidebar.text_input("Veuillez entrer la clé Open IA")
 
 client = OpenAI(api_key=OpenAI_KEY)
 
-
-# Testez ici plusieurs variation du prompte
-prompt = "A cute baby sea otter"
-
-
-
 image = client.images.generate(
     model="dall-e-2",
-    prompt=prompt,
+    prompt=user_input,
     size="512x512",
     quality="standard",
     n=1,
 )
 
 image_url = image.data[0].url
-print(image_url)
+st.image(image_url)
 
