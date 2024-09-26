@@ -10,3 +10,5 @@ st.write(user_input)
 st.image("https://th.bing.com/th/id/OIP.QU4hu4jfXbTgoFGCWX1VgAHaC3?rs=1&pid=ImgDetMain")
 # sidebare 
 st.sidebar.title("Lysa Bouslene")
+#Video 
+st.sidebar.video("https://youtu.be/kK3gGPkO9L8")
