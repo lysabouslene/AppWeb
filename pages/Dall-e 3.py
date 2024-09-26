@@ -6,7 +6,10 @@ user_input = st.text_input("Veuillez entré une description de l'image que vous 
 st.write(user_input)
 # sidebare 
 st.sidebar.title("Assistant")
-user_notes = st.sidebar.text_input("Veuillez entrer la clé Open IA")
+OpenAI_KEY= st.sidebar.text_input("Veuillez entrer la clé Open IA")
+
+client = OpenAI(api_key=OpenAI_KEY)
+
 
 # Testez ici plusieurs variation du prompte
 prompt = "A cute baby sea otter"
