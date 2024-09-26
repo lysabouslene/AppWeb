@@ -36,3 +36,16 @@ if st.sidebar.button("Générer l'image"):
     else:
         # Si l'utilisateur n'a pas entré de prompt
         st.error("Veuillez entrer une description pour générer l'image.")
+
+                
+                # Récupérer l'URL de l'image générée
+                image_url = response['data'][0]['url']
+                
+                # Afficher l'image générée
+                st.image(image_url, caption=f"Image générée pour : '{user_input}'", use_column_width=True)
+            except Exception as e:
+                # En cas d'erreur
+                st.error(f"Une erreur est survenue lors de la génération de l'image : {e}")
+    else:
+        # Si l'utilisateur n'a pas entré de prompt
+        st.error("Veuillez entrer une description pour générer l'image.")
