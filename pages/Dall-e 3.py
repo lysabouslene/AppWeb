@@ -6,5 +6,5 @@ user_input = st.text_input("Veuillez entré une description de l'image que vous 
 st.write(user_input)
 # sidebare 
 st.sidebar.title("Assistant")
-user_notes = st.sidebar.text_area("Veuillez entrer la clé Open IA")
+user_notes = st.sidebar.text_input("Veuillez entrer la clé Open IA")
 
