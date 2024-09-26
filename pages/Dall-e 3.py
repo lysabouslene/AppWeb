@@ -8,26 +8,21 @@ st.write(user_input)
 st.sidebar.title("Assistant")
 user_notes = st.sidebar.text_input("Veuillez entrer la clé Open IA")
 
-# Vérifiez si la clé API et la description de l'image sont fournies
-if not api_key:
-    st.sidebar.warning("Veuillez entrer votre clé API OpenAI pour générer une image.")
-elif not user_input:
-    st.warning("Veuillez entrer une description pour générer une image.")
-else:
-    # Si l'utilisateur a entré une clé et un texte, on lance la génération
-    openai.api_key = api_key
+# Testez ici plusieurs variation du prompte
+prompt = "A cute baby sea otter"
 
-    # Appel à l'API DALL-E pour générer une image
-    try:
-        response = openai.Image.create(
-            prompt=user_input,
-            n=1,
-            size="512x512"
-        )
 
-        # Extraire l'URL de l'image
-        image_url = response['data'][0]['url']
 
+image = client.images.generate(
+    model="dall-e-2",
+    prompt=prompt,
+    size="512x512",
+    quality="standard",
+    n=1,
+)
+
+image_url = image.data[0].url
+print(image_url)
         # Afficher l'image dans l'application Streamlit
         st.image(image_url, caption="Image générée", use_column_width=True)
     except Exception as e:
