@@ -8,18 +8,23 @@ st.write(user_input)
 st.sidebar.title("Assistant")
 user_notes = st.sidebar.text_input("Veuillez entrer la clé Open IA")
 
-# Testez ici plusieurs variation du prompte
-prompt = "A cute baby sea otter"
+# Si l'utilisateur a entré une clé et un texte, on lance la génération
+if api_key and user_input:
+    # Initialisation de l'API avec la clé entrée
+    openai.api_key = api_key
 
+    # Appel à l'API DALL-E pour générer une image
+    try:
+        response = openai.Image.create(
+            prompt=user_input,
+            n=1,
+            size="512x512"
+        )
 
+        # Extraire l'URL de l'image
+        image_url = response['data'][0]['url']
 
-image = client.images.generate(
-    model="dall-e-2",
-    prompt=prompt,
-    size="512x512",
-    quality="standard",
-    n=1,
-)
-
-image_url = image.data[0].url
-print(image_url)
+        # Afficher l'image dans l'application Streamlit
+        st.image(image_url, caption="Image générée", use_column_width=True)
+    except Exception as e:
+        st.error(f"Erreur lors de la génération de l'image : {e}")
