@@ -7,8 +7,9 @@ st.write("Ceci est un formulaire de contact")
 user_input = st.text_input("Tapez votre texte : ")
 st.write(user_input)
 # Image 
-st.image("https://th.bing.com/th/id/OIP.QU4hu4jfXbTgoFGCWX1VgAHaC3?rs=1&pid=ImgDetMain")
+video("https://youtu.be/kK3gGPkO9L8")
+st.video("https://youtu.be/kK3gGPkO9L8")
 # sidebare 
 st.sidebar.title("Lysa Bouslene")
 #Video 
-st.sidebar.video("https://youtu.be/kK3gGPkO9L8")
+st.sidebar.image("https://th.bing.com/th/id/OIP.QU4hu4jfXbTgoFGCWX1VgAHaC3?rs=1&pid=ImgDetMain")
